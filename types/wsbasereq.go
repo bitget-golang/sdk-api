@@ -1,4 +1,4 @@
-package model
+package types
 
 type WsBaseReq struct {
 	Op   string        `json:"op"`

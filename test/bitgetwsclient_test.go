@@ -2,9 +2,10 @@ package test
 
 import (
 	"fmt"
-	"github.com/bitget-golang/sdk-api/internal/model"
-	"github.com/bitget-golang/sdk-api/pkg/client/ws"
 	"testing"
+
+	"github.com/bitget-golang/sdk-api/pkg/client/ws"
+	"github.com/bitget-golang/sdk-api/types"
 )
 
 func TestBitgetWsClient_New(t *testing.T) {
@@ -15,8 +16,8 @@ func TestBitgetWsClient_New(t *testing.T) {
 		fmt.Println("default error:" + message)
 	})
 
-	var channelsDef []model.SubscribeReq
-	subReqDef1 := model.SubscribeReq{
+	var channelsDef []types.SubscribeReq
+	subReqDef1 := types.SubscribeReq{
 		InstType: "UMCBL",
 		Channel:  "account",
 		InstId:   "default",
@@ -24,8 +25,8 @@ func TestBitgetWsClient_New(t *testing.T) {
 	channelsDef = append(channelsDef, subReqDef1)
 	client.SubscribeDef(channelsDef)
 
-	var channels []model.SubscribeReq
-	subReq1 := model.SubscribeReq{
+	var channels []types.SubscribeReq
+	subReq1 := types.SubscribeReq{
 		InstType: "UMCBL",
 		Channel:  "account",
 		InstId:   "default",

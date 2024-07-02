@@ -1,4 +1,4 @@
-package model
+package types
 
 type SubscribeReq struct {
 	InstType string `json:"instType"`

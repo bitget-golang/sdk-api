@@ -2,7 +2,6 @@ package v1
 
 import (
 	"github.com/bitget-golang/sdk-api/common"
-	"github.com/bitget-golang/sdk-api/internal"
 )
 
 type SpotAccountClient struct {
@@ -15,7 +14,7 @@ func (p *SpotAccountClient) Init() *SpotAccountClient {
 }
 
 func (p *SpotAccountClient) Info() (string, error) {
-	params := internal.NewParams()
+	params := common.NewParams()
 	resp, err := p.BitgetRestClient.DoGet("/api/spot/v1/account/getInfo", params)
 	return resp, err
 }

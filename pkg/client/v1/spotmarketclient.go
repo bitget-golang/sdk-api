@@ -2,7 +2,6 @@ package v1
 
 import (
 	"github.com/bitget-golang/sdk-api/common"
-	"github.com/bitget-golang/sdk-api/internal"
 )
 
 type SpotMarketClient struct {
@@ -15,7 +14,7 @@ func (p *SpotMarketClient) Init() *SpotMarketClient {
 }
 
 func (p *SpotMarketClient) Currencies() (string, error) {
-	params := internal.NewParams()
+	params := common.NewParams()
 	resp, err := p.BitgetRestClient.DoGet("/api/spot/v1/public/currencies", params)
 	return resp, err
 }

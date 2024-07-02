@@ -2,7 +2,6 @@ package v1
 
 import (
 	"github.com/bitget-golang/sdk-api/common"
-	"github.com/bitget-golang/sdk-api/internal"
 )
 
 type MixAccountClient struct {
@@ -25,7 +24,7 @@ func (p *MixAccountClient) Accounts(params map[string]string) (string, error) {
 }
 
 func (p *MixAccountClient) SetLeverage(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}
@@ -34,7 +33,7 @@ func (p *MixAccountClient) SetLeverage(params map[string]string) (string, error)
 }
 
 func (p *MixAccountClient) SetMargin(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}
@@ -43,7 +42,7 @@ func (p *MixAccountClient) SetMargin(params map[string]string) (string, error) {
 }
 
 func (p *MixAccountClient) SetMarginMode(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}
@@ -52,7 +51,7 @@ func (p *MixAccountClient) SetMarginMode(params map[string]string) (string, erro
 }
 
 func (p *MixAccountClient) SetPositionMode(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}

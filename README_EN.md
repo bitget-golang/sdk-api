@@ -13,7 +13,7 @@ This is a lightweight library that works as a connector to [Bitget API](https://
 package test
 
 import (
-  "github.com/bitget-golang/sdk-api/internal"
+  "github.com/bitget-golang/sdk-api/common"
   "github.com/bitget-golang/sdk-api/pkg/client"
   "github.com/bitget-golang/sdk-api/pkg/client/v1"
   "fmt"
@@ -23,7 +23,7 @@ import (
 func Test_PlaceOrder(t *testing.T) {
   client := new(v1.MixOrderClient).Init()
 
-  params := internal.NewParams()
+  params := common.NewParams()
   params["symbol"] = "BTCUSDT_UMCBL"
   params["marginCoin"] = "USDT"
   params["side"] = "open_long"
@@ -42,7 +42,7 @@ func Test_PlaceOrder(t *testing.T) {
 func Test_post(t *testing.T) {
   client := new(client.BitgetApiClient).Init()
 
-  params := internal.NewParams()
+  params := common.NewParams()
   params["symbol"] = "BTCUSDT_UMCBL"
   params["marginCoin"] = "USDT"
   params["side"] = "open_long"
@@ -61,7 +61,7 @@ func Test_post(t *testing.T) {
 func Test_get(t *testing.T) {
   client := new(client.BitgetApiClient).Init()
 
-  params := internal.NewParams()
+  params := common.NewParams()
   params["productType"] = "umcbl"
 
   resp, err := client.Get("/api/mix/v1/account/accounts", params)
@@ -74,7 +74,7 @@ func Test_get(t *testing.T) {
 func Test_get_with_params(t *testing.T) {
   client := new(client.BitgetApiClient).Init()
 
-  params := internal.NewParams()
+  params := common.NewParams()
 
   resp, err := client.Get("/api/spot/v1/account/getInfo", params)
   if err != nil {
@@ -89,7 +89,7 @@ func Test_get_with_params(t *testing.T) {
 package test
 
 import (
-  "github.com/bitget-golang/sdk-api/internal/model"
+  "github.com/bitget-golang/sdk-api/types"
   "github.com/bitget-golang/sdk-api/pkg/client/ws"
   "fmt"
   "testing"

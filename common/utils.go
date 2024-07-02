@@ -1,14 +1,15 @@
-package internal
+package common
 
 import (
 	"encoding/json"
 	"errors"
-	"github.com/bitget-golang/sdk-api/constants"
 	"net/http"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/bitget-golang/sdk-api/constants"
 )
 
 func TimesStamp() string {
