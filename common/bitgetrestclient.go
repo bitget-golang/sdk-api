@@ -1,6 +1,7 @@
 package common
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 	"strings"
@@ -68,17 +69,20 @@ func (p *BitgetRestClient) DoPost(uri string, params string) (string, error) {
 func (p *BitgetRestClient) DoGet(uri string, params map[string]string) (string, error) {
 	timesStamp := TimesStamp()
 	body := BuildGetParams(params)
-	//fmt.Println(body)
+	fmt.Println(uri, params)
 
 	sign := p.Signer.Sign(constants.GET, uri, body, timesStamp)
+	fmt.Println(sign)
 
 	requestUrl := p.BaseUrl + uri + body
+	fmt.Println(requestUrl)
 
 	request, err := http.NewRequest(constants.GET, requestUrl, nil)
 	if err != nil {
 		return "", err
 	}
 	Headers(request, p.ApiKey, timesStamp, sign, p.Passphrase)
+	fmt.Println(request.Header)
 
 	response, err := p.HttpClient.Do(request)
 

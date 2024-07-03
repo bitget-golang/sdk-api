@@ -2,7 +2,7 @@ package config
 
 import "github.com/bitget-golang/sdk-api/constants"
 
-const (
+var (
 	BaseUrl = "https://api.bitget.com"
 	WsUrl   = "wss://ws.bitget.com/mix/v1/stream"
 

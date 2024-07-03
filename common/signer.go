@@ -10,6 +10,7 @@ import (
 	"encoding/base64"
 	"encoding/pem"
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -32,6 +33,7 @@ func (p *Signer) Sign(method string, requestPath string, body string, timesStamp
 	}
 	hash := hmac.New(sha256.New, p.secretKey)
 	hash.Write([]byte(payload.String()))
+	fmt.Println("SIGN===", p.secretKey, payload.String())
 	result := base64.StdEncoding.EncodeToString(hash.Sum(nil))
 	return result
 }

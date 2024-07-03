@@ -5,11 +5,18 @@ import (
 	"testing"
 
 	"github.com/bitget-golang/sdk-api/common"
+	"github.com/bitget-golang/sdk-api/config"
+	"github.com/bitget-golang/sdk-api/constants"
 	"github.com/bitget-golang/sdk-api/pkg/client"
 	v1 "github.com/bitget-golang/sdk-api/pkg/client/v1"
 )
 
 func Test_PlaceOrder(t *testing.T) {
+	config.ApiKey = ""
+	config.SecretKey = ""
+	config.PASSPHRASE = ""
+	config.SignType = constants.SHA256
+
 	client := new(v1.MixOrderClient).Init()
 
 	params := common.NewParams()
