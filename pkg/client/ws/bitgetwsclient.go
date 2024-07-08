@@ -77,7 +77,6 @@ func (p *BitgetWsClient) SubscribeDef(list []types.SubscribeReq) {
 
 func toUpperReq(req types.SubscribeReq) types.SubscribeReq {
 	req.InstType = strings.ToUpper(req.InstType)
-	req.InstId = strings.ToUpper(req.InstId)
 	req.Channel = strings.ToLower(req.Channel)
 	return req
 
