@@ -1,9 +1,10 @@
 package applogger
 
 import (
+	"os"
+
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
 )
 
 var sugaredLogger *zap.SugaredLogger
@@ -20,7 +21,7 @@ func init() {
 
 	// define default level as debug level
 	atomicLevel = zap.NewAtomicLevel()
-	atomicLevel.SetLevel(zapcore.DebugLevel)
+	atomicLevel.SetLevel(zapcore.ErrorLevel)
 
 	core := zapcore.NewCore(zapcore.NewConsoleEncoder(encoderCfg), os.Stdout, atomicLevel)
 	sugaredLogger = zap.New(core).Sugar()

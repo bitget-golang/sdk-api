@@ -91,7 +91,6 @@ func (p *BitgetWsClient) Subscribe(list []types.SubscribeReq, listener common.On
 
 		p.bitgetBaseWsClient.ScribeMap[req] = listener
 		p.bitgetBaseWsClient.AllSuribe.Add(req)
-		args = append(args, req)
 	}
 
 	wsBaseReq := types.WsBaseReq{

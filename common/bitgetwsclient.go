@@ -220,5 +220,5 @@ func (p *BitgetBaseWsClient) GetListener(argJson interface{}) OnReceive {
 type OnReceive func(message string)
 
 func (p *BitgetBaseWsClient) handleMessage(msg string) {
-	fmt.Println("default:" + msg)
+	//fmt.Println("default:" + msg)
 }

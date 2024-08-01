@@ -65,6 +65,11 @@ func (p *MixAccountClient) SinglePosition(params map[string]string) (string, err
 	return resp, err
 }
 
+func (p *MixAccountClient) SubAccountAssets(params map[string]string) (string, error) {
+	resp, err := p.BitgetRestClient.DoGet("/api/v2/mix/account/sub-account-assets", params)
+	return resp, err
+}
+
 func (p *MixAccountClient) AllPosition(params map[string]string) (string, error) {
 	resp, err := p.BitgetRestClient.DoGet("/api/v2/mix/position/all-position", params)
 	return resp, err

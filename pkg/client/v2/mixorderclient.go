@@ -75,7 +75,7 @@ func (p *MixOrderClient) PlacePlanOrder(params map[string]string) (string, error
 	return resp, err
 }
 
-func (p *MixOrderClient) CancelPlanOrder(params map[string]string) (string, error) {
+func (p *MixOrderClient) CancelPlanOrder(params map[string]any) (string, error) {
 	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
