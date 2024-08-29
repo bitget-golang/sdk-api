@@ -23,6 +23,11 @@ func (p *MixOrderClient) PlaceOrder(params map[string]string) (string, error) {
 	return resp, err
 }
 
+func (p *MixOrderClient) OrderDetail(params map[string]string) (string, error) {
+	resp, err := p.BitgetRestClient.DoGet("/api/v2/mix/order/detail", params)
+	return resp, err
+}
+
 func (p *MixOrderClient) BatchPlaceOrder(params map[string]string) (string, error) {
 	postBody, jsonErr := common.ToJson(params)
 	if jsonErr != nil {
