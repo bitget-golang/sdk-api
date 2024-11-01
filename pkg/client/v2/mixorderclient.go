@@ -105,7 +105,7 @@ func (p *MixOrderClient) TraderOrderClosePositions(params map[string]string) (st
 	if jsonErr != nil {
 		return "", jsonErr
 	}
-	resp, err := p.BitgetRestClient.DoPost("/api/v2/copy/mix-trader/order-close-positions", postBody)
+	resp, err := p.BitgetRestClient.DoPost("/api/v2/mix/order/close-positions", postBody)
 	return resp, err
 }
 
